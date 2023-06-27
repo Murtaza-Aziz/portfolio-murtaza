@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presonal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/90959a58c3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo-3.png" class="logo" alt="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Software Engineer/Web Developer</p>
+            <h1>Hi, I'm <span>Murtaza</span></h1>
+        </div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/portfolio-pic.jpg" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>I am a software engineer and web developer from Australia.
+                    I am passionate about web development and web design.
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>HTML</span><br/> Experience with HTML5</li>
+                        <li><span>CSS</span><br/> Experience in CSS for styling web pages. </li>
+                        <li><span>JavaScript</span><br/> Building web applications using JavaScript</li>
+                        <li><span>React</span><br/> Hands-on experience with React for building user interfaces. </li>
+                        <li><span>Node</span><br/>Worked with Node.js for server-side applications.</li>
+                        <li><span>Express</span><br/>Utilized Express.js for developing server-side applications and APIs.</li>
+                        <li><span>MongoDB</span><br/>Experience with MongoDB for storing and retrieving data.</li>
+                        <li><span>Git</span><br/>Experience with Git for version control and for source code management.</li>
+                        <li><span>GitHub</span><br/>Proficient in using GitHub for managing code repositories.</li>
+                        <li><span>API integration</span> <br/> Experience integrating third-party APIs into web applications.</li>
+                        <li><span>Stripe</span> <br/>Integrated Stripe for payment processing in web applications for a startup.</li>
+                        <li><span>Jira</span> <br/>Worked with Jira for project management and tracking tasks both for university and professional work.</li>
+                        <li> <span>Comunication skills</span> <br/> Strong written and verbal communication skills.</li>
+                        <li> <span>Teamwork</span> <br/> Strong teamwork with effective collaboration and participation in team projects.</li>
+                        <li> <span>Leadership</span> <br/> Demonstrated leadership qualities in project coordination and mentoring for university led industry project.</li>
+                    </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>Feb-2023 to March-2023</span><br/>Worked as an intern software enginner at EZiD</li>
+                    <li><span>Feb-2023 to June-2023</span><br/> Made a website for a client as industry experience whilst in university for a company called brainybucks </li>
+                </ul>
+        </div>
+        <div class="tab-contents"  id="education">
+            <ul>
+                <li> <span>2021-2023</span> <br/>Bachelors in information technology From Macquaire University.</li>
+                <li> <span>2019-2020</span> <br/> Bachelors of computer science From University of Wollongong in Dubai (66 credits).</li>
+            </ul>
+    </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/brainy-bucks-logo-work.jpg" alt="">
+                <div class="layer">
+                    <h3>Website for brainyBucks</h3>
+                    <p>A financial website for a startup</p>
+                    <a href="https://brainybucks.netlify.app/"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/ezid-work.jpg" alt="">
+                <div class="layer">
+                    <h3>Payment intergration for EZiD</h3>
+                    <p>Integration for EZiD for payment processing</p>
+                    <a href="https://www.ezid.io/"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/memory-game-work.jpg" alt="">
+                <div class="layer">
+                    <h3>A game of memory</h3>
+                    <p>Made to showcase different JavaScript functions</p>
+                    <a href="https://github.com/Murtaza-Aziz/Memory-game-js"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/whack-a-mole-work.jpg" alt="">
+                <div class="layer">
+                    <h3>Whack a mole game</h3>
+                    <p>Made to showcase different JavaScript functions</p>
+                    <a href="https://github.com/Murtaza-Aziz/whac-a-mole-js"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/rock-paper-scissors-work.jpg" alt="">
+                <div class="layer">
+                    <h3>Rock paper scissors game</h3>
+                    <p>Made to showcase different JavaScript functions</p>
+                    <a href="https://github.com/Murtaza-Aziz/rock-paper-scissors-js"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="contact">
+    <div class="container">
+       <div class="row">
+           <div class="contact-left">
+               <h1 class="subtitle">Contact Me</h1>
+               <p><i class="fas fa-paper-plane"></i>murtaza.aziz101@gmail.com</p>
+               <p><i class="fas fa-phone-square-alt"></i>+61493416213</p>
+               <div class="social-icons">
+                   <a href="https://www.linkedin.com/in/murtazaaziz/"><i class="fab fa-linkedin"></i></a>
+                   <a href="https://github.com/Murtaza-Aziz"><i class="fab fa-github"></i></a>
+                   <a href="mailto:murtaza.aziz101@gmail.com"><i><i class="fas fa-envelope-square"></i></a>
+               </div>
+               <a href="images/Murtaza_Aziz_CV-2.pdf" download class="contact-btn">Download CV</a>
+           </div>
+           <div class="contact-right">
+               <form name="submit-to-google-sheet">
+                   <input type="text" name="Name" placeholder="Name" required>
+                   <input type="email" name="Email" placeholder="Email" required>
+                   <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                   <button type="submit" class="btn">Submit</button>
+               </form>
+               <span id="message"></span>
+           </div>
+       </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+  function openmenu(){
+      sidemenu.style.right = "0";
+  }
+
+  function closemenu(){
+      sidemenu.style.right = "-200px";
+  }
+
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz-SBAU2Fq-tz4yrjmYgcCvjRtdomPpW5CWTPZea-n1bYOmDPOFDskuck6i6nFHExt8NA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const message = document.getElementById('message')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {message.innerHTML = 'Message sent successfully'
+        setTimeout(function(){message.innerHTML = ''}, 5000)
+        form.reset()
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
