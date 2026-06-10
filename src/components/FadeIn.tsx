@@ -8,8 +8,8 @@ interface FadeInProps {
 }
 
 /**
- * Lightweight scroll-reveal: fades + translates up when entering viewport.
- * Uses IntersectionObserver; no external dependency.
+ * Scroll-reveal animation. Content is visible by default;
+ * animates when entering the viewport (skipped if reduced motion).
  */
 export default function FadeIn({
   children,
@@ -19,10 +19,25 @@ export default function FadeIn({
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduceMotion(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setVisible(true);
+      return;
+    }
+
     const el = ref.current;
     if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,11 +45,13 @@ export default function FadeIn({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [reduceMotion]);
+
+  const show = visible || reduceMotion;
 
   return (
     <div
@@ -42,10 +59,11 @@ export default function FadeIn({
       className={className}
       style={{
         ...style,
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
-        transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
-        willChange: "opacity, transform",
+        opacity: show ? 1 : 1,
+        transform: show ? "translateY(0)" : "translateY(12px)",
+        transition: reduceMotion
+          ? undefined
+          : `transform 0.55s ease ${delay}ms`,
       }}
     >
       {children}

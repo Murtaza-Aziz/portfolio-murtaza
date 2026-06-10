@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react";
 import { meta } from "../content";
 import { asset } from "../lib/paths";
 
 export default function Hero() {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 60);
-    return () => clearTimeout(t);
-  }, []);
-
-  const fadeStyle = (delayMs: number): React.CSSProperties => ({
-    opacity: loaded ? 1 : 0,
-    transform: loaded ? "translateY(0)" : "translateY(16px)",
-    transition: `opacity 0.6s ease ${delayMs}ms, transform 0.6s ease ${delayMs}ms`,
-  });
-
   return (
     <section
       id="hero"
@@ -23,10 +10,7 @@ export default function Hero() {
       <div className="min-h-[calc(100vh-10rem)] grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 items-end">
         {/* Text column */}
         <div className="md:col-span-7 flex flex-col justify-end order-2 md:order-1">
-          <p
-            className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)] mb-8"
-            style={fadeStyle(0)}
-          >
+          <p className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)] mb-8">
             {meta.location}&nbsp;&nbsp;/&nbsp;&nbsp;{meta.availability}
           </p>
 
@@ -35,7 +19,6 @@ export default function Hero() {
             style={{
               fontSize: "clamp(3.5rem, 11vw, 8rem)",
               color: "var(--color-ink)",
-              ...fadeStyle(80),
             }}
           >
             Murtaza
@@ -44,16 +27,11 @@ export default function Hero() {
           </h1>
 
           <div
-            className="my-8"
-            style={{
-              height: "1px",
-              backgroundColor: "var(--color-rule)",
-              width: loaded ? "100%" : "0%",
-              transition: "width 0.8s ease 200ms",
-            }}
+            className="my-8 w-full"
+            style={{ height: "1px", backgroundColor: "var(--color-rule)" }}
           />
 
-          <div style={fadeStyle(280)}>
+          <div>
             <p
               className="font-serif font-light italic mb-8"
               style={{
@@ -92,10 +70,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div
-            className="mt-16 flex items-center gap-3 font-mono text-xs text-[var(--color-ink-muted)]"
-            style={fadeStyle(420)}
-          >
+          <div className="mt-16 flex items-center gap-3 font-mono text-xs text-[var(--color-ink-muted)]">
             <span>Scroll</span>
             <span
               className="inline-block"
@@ -109,16 +84,12 @@ export default function Hero() {
         </div>
 
         {/* Portrait column — editorial figure treatment */}
-        <div
-          className="md:col-span-5 md:col-start-8 order-1 md:order-2 flex flex-col items-start md:items-end"
-          style={fadeStyle(160)}
-        >
+        <div className="md:col-span-5 md:col-start-8 order-1 md:order-2 flex flex-col items-start md:items-end">
           <figure className="w-full max-w-[280px] md:max-w-none md:w-[85%] md:ml-auto">
             <div
               className="relative overflow-hidden"
               style={{ border: "1px solid var(--color-ink)" }}
             >
-              {/* Offset accent bar — print registration mark feel */}
               <div
                 className="absolute top-0 left-0 z-10"
                 style={{
@@ -132,6 +103,8 @@ export default function Hero() {
                 alt="Murtaza Aziz"
                 className="w-full object-cover object-top grayscale-[15%] contrast-[1.02]"
                 style={{ aspectRatio: "3/4", maxHeight: "520px" }}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             <figcaption className="mt-3 flex items-baseline justify-between gap-4">

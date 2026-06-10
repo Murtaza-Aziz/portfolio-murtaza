@@ -12,6 +12,11 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { background: #F4F1EA; color: #1A1814; margin: 0; min-height: 100%; }
+      #root:empty { display: grid; place-items: center; min-height: 100vh; font-family: system-ui, sans-serif; }
+      #root:empty::after { content: "Loading portfolio…"; font-size: 0.875rem; letter-spacing: 0.05em; opacity: 0.6; }
+    </style>
     <!-- GitHub Pages SPA redirect (https://github.com/rafgraph/spa-github-pages) -->
     <script>
       (function (l) {
@@ -33,6 +38,12 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif;">
+        This portfolio requires JavaScript. Please enable it, or contact
+        <a href="mailto:murtaza.aziz101@gmail.com">murtaza.aziz101@gmail.com</a>.
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
