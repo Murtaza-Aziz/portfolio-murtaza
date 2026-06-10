@@ -1,5 +1,6 @@
 import { meta } from "../content";
 import SectionHeader from "./SectionHeader";
+import { asset } from "../lib/paths";
 
 export default function Contact() {
   return (
@@ -33,7 +34,7 @@ export default function Contact() {
           />
 
           <a
-            href={meta.cv}
+            href={asset(meta.cv)}
             download
             className="inline-flex items-center gap-4 font-mono text-xs uppercase tracking-widest group"
           >

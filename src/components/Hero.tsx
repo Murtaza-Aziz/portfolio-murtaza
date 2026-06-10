@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { meta } from "../content";
+import { asset } from "../lib/paths";
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -82,7 +83,7 @@ export default function Hero() {
                 LinkedIn
               </a>
               <a
-                href={meta.cv}
+                href={asset(meta.cv)}
                 download
                 className="border border-[var(--color-ink)] px-4 py-2 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors"
               >
@@ -127,7 +128,7 @@ export default function Hero() {
                 }}
               />
               <img
-                src={meta.portrait}
+                src={asset(meta.portrait)}
                 alt="Murtaza Aziz"
                 className="w-full object-cover object-top grayscale-[15%] contrast-[1.02]"
                 style={{ aspectRatio: "3/4", maxHeight: "520px" }}

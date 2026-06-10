@@ -28,6 +28,18 @@ npm run preview   # Serve the dist/ output locally
 
 Output goes to `dist/`.
 
+## Deploy (GitHub Pages)
+
+This site is configured for a **project site** at:
+
+`https://murtaza-aziz.github.io/portfolio-murtaza/`
+
+1. In the repo on GitHub, go to **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not "Deploy from branch")
+3. Push to `main` — the workflow in `.github/workflows/deploy.yml` builds `dist/` and publishes it
+
+The Vite `base` is set to `/portfolio-murtaza/` so assets resolve correctly on GitHub Pages.
+
 ## Content
 
 All copy (projects, experience, education, contact info) lives in a single file:

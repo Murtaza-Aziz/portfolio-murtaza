@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { meta } from "../content";
+import { asset } from "../lib/paths";
 
 const navLinks = [
-  { label: "Work", href: "/#work" },
-  { label: "Experience", href: "/#experience" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", hash: "work" },
+  { label: "Experience", hash: "experience" },
+  { label: "About", hash: "about" },
+  { label: "Contact", hash: "contact" },
 ];
 
 export default function Nav() {
@@ -27,12 +28,11 @@ export default function Nav() {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    hash: string
   ) => {
-    if (href.startsWith("/#") && isHome) {
+    if (isHome) {
       e.preventDefault();
-      const id = href.slice(2);
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
     }
     setMenuOpen(false);
   };
@@ -61,8 +61,8 @@ export default function Nav() {
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  href={`${asset("")}#${link.hash}`}
+                  onClick={(e) => handleNavClick(e, link.hash)}
                   className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
                 >
                   {link.label}
@@ -118,8 +118,8 @@ export default function Nav() {
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={`${asset("")}#${link.hash}`}
+                onClick={(e) => handleNavClick(e, link.hash)}
                 className="font-serif text-4xl font-black tracking-tight"
               >
                 {link.label}

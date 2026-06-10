@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { docforgeCaseStudy, projects } from "../content";
+import { asset } from "../lib/paths";
 
 const flagship = projects.find((p) => p.slug === "docforge")!;
 
@@ -67,7 +68,7 @@ export default function DocForge() {
         style={{ border: "1px solid var(--color-rule)" }}
       >
         <img
-          src="/images/docforge.png"
+          src={asset("/images/docforge.png")}
           alt="DocForge AI — PDF builder interface"
           className="w-full object-cover"
           style={{ aspectRatio: "16/9", objectPosition: "top" }}

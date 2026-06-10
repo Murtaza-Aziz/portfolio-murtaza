@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { projects } from "../content";
 import SectionHeader from "./SectionHeader";
 import FadeIn from "./FadeIn";
+import { asset } from "../lib/paths";
 
 export default function WorkList() {
   return (
@@ -95,7 +96,7 @@ function ProjectRow({
                 style={{ border: "1px solid var(--color-rule)" }}
               >
                 <img
-                  src={project.image}
+                  src={asset(project.image)}
                   alt={project.title}
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   style={{ aspectRatio: "16/10" }}
