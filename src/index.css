@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F4F1EA;
+  --color-ink: #1A1814;
+  --color-ink-muted: #6B6560;
+  --color-accent: #E84B0F;
+  --color-rule: #D4CEBC;
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F4F1EA;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-paper);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accent link style — apply via className="link-accent" */
+.link-accent {
+  position: relative;
+  display: inline-block;
+  color: var(--color-accent);
+}
+
+.link-accent::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+.link-accent:hover::after {
+  width: 100%;
+}
+
+/* Underline hover link — apply via className="link-underline" */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-ink);
+  transition: width 0.25s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
