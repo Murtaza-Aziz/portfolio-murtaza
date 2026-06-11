@@ -5,7 +5,7 @@ import FadeIn from "./FadeIn";
 export default function Experience() {
   return (
     <section id="experience" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
-      <SectionHeader number="02 —" title="Experience" />
+      <SectionHeader number="01 —" title="Experience" />
 
       <div className="flex flex-col">
         {experience.map((item, i) => (

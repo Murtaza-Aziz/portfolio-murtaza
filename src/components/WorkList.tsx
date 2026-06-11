@@ -7,7 +7,7 @@ import { asset } from "../lib/paths";
 export default function WorkList() {
   return (
     <section id="work" className="px-6 md:px-10 py-24 max-w-7xl mx-auto">
-      <SectionHeader number="01 —" title="Selected Work" />
+      <SectionHeader number="02 —" title="Selected Work" />
 
       <div className="flex flex-col">
         {projects.map((project, i) => (

@@ -82,3 +82,25 @@ a {
 .link-underline:hover::after {
   width: 100%;
 }
+
+/* Machine view — blinking terminal cursor */
+@keyframes termBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Machine view — fade-in-up entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.machine-view-enter {
+  animation: fadeInUp 0.28s ease forwards;
+}

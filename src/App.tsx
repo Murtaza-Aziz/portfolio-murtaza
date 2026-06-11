@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import DocForge from "./pages/DocForge";
+import MachineView from "./components/MachineView";
+import { useMode } from "./context/ModeContext";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -13,15 +15,21 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const { mode } = useMode();
+
   return (
     <>
       <ScrollToTop />
       <Nav />
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/docforge" element={<DocForge />} />
-        </Routes>
+        {mode === "machine" ? (
+          <MachineView />
+        ) : (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/docforge" element={<DocForge />} />
+          </Routes>
+        )}
       </main>
     </>
   );
