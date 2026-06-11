@@ -91,43 +91,6 @@ export default function Nav() {
               </ul>
             )}
 
-            {/* Human / Machine toggle */}
-            <div
-              className="flex items-center"
-              style={{
-                border: isMachine
-                  ? "1px solid #30363d"
-                  : "1px solid var(--color-rule)",
-                padding: "2px",
-              }}
-            >
-              {(["human", "machine"] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setMode(m)}
-                  className="font-mono text-xs uppercase tracking-widest px-3 py-1.5 transition-all duration-200 cursor-pointer"
-                  style={{
-                    background:
-                      mode === m
-                        ? isMachine
-                          ? "#c9d1d9"
-                          : "var(--color-ink)"
-                        : "transparent",
-                    color:
-                      mode === m
-                        ? isMachine
-                          ? "#0d1117"
-                          : "var(--color-paper)"
-                        : isMachine
-                        ? "#4d5566"
-                        : "var(--color-ink-muted)",
-                  }}
-                >
-                  {m}
-                </button>
-              ))}
-            </div>
-
             {/* Mobile hamburger — human mode only */}
             {!isMachine && (
               <button

@@ -23,7 +23,7 @@ export default function Footer() {
 
       {/* Bottom strip */}
       <div
-        className="px-6 md:px-10 pb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+        className="px-6 md:px-10 pb-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
       >
         <p className="font-mono text-xs text-[var(--color-ink-muted)] tracking-widest">
           © {year} {meta.name}. All rights reserved.

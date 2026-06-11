@@ -9,7 +9,7 @@ export const meta = {
   phone: "+61 493 416 213",
   linkedin: "https://www.linkedin.com/in/murtazaaziz/",
   github: "https://github.com/Murtaza-Aziz",
-  cv: "/images/Murtaza_Aziz_CV.pdf",
+  cv: "/cv/Murtaza_Aziz_CV.pdf",
   portrait: "/images/portrait.png",
 } as const;
 

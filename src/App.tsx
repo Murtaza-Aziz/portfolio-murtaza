@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Nav from "./components/Nav";
+import ModeToggle from "./components/ModeToggle";
 import Home from "./pages/Home";
 import DocForge from "./pages/DocForge";
 import MachineView from "./components/MachineView";
@@ -31,6 +32,7 @@ export default function App() {
           </Routes>
         )}
       </main>
+      <ModeToggle />
     </>
   );
 }
