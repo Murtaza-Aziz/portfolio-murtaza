@@ -79,7 +79,7 @@ function ProjectRow({
               ))}
               {project.hasCaseStudy && (
                 <Link
-                  to="/docforge"
+                  to="/docuplate"
                   className="font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] link-accent"
                 >
                   Case study →
@@ -92,16 +92,13 @@ function ProjectRow({
           {project.image && (
             <div className="md:col-span-5">
               <div
-                className="overflow-hidden flex items-center justify-center p-6 md:p-8"
-                style={{
-                  border: "1px solid var(--color-rule)",
-                  backgroundColor: "var(--color-paper)",
-                }}
+                className="overflow-hidden flex items-center justify-center p-6 md:p-8 rounded-sm"
+                style={{ border: "1px solid var(--color-rule)" }}
               >
                 <img
                   src={asset(project.image)}
                   alt={project.title}
-                  className="max-h-[160px] max-w-[160px] md:max-h-[180px] md:max-w-[180px] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="max-h-[140px] max-w-[140px] md:max-h-[168px] md:max-w-[168px] object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>

@@ -55,7 +55,7 @@ Edit that file to update the portfolio without touching any component.
 | Path | Page |
 |------|------|
 | `/` | Home — hero, work, experience, about, contact |
-| `/docforge` | DocForge AI case study |
+| `/docuplate` | Docuplate case study |
 
 ## Assets
 

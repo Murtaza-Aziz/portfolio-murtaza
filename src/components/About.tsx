@@ -24,8 +24,8 @@ export default function About() {
             Currently at Preplocal, optimizing delivery logistics and workflow
             automation. Previously full-stack at Meyd.it (escrow + Stripe
             payments) and EZiD (subscription billing). I also built{" "}
-            <span className="text-[var(--color-ink)]">DocForge AI</span> — a
-            PDF automation SaaS with 220+ tests, deployed on Cloudflare Pages
+            <span className="text-[var(--color-ink)]">Docuplate</span> — a
+            PDF automation SaaS with 285+ tests, deployed on Cloudflare Pages
             and Render.
           </p>
 

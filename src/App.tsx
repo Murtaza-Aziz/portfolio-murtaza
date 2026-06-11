@@ -1,9 +1,9 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import Nav from "./components/Nav";
 import ModeToggle from "./components/ModeToggle";
 import Home from "./pages/Home";
-import DocForge from "./pages/DocForge";
+import Docuplate from "./pages/Docuplate";
 import MachineView from "./components/MachineView";
 import { useMode } from "./context/ModeContext";
 
@@ -28,7 +28,8 @@ export default function App() {
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/docforge" element={<DocForge />} />
+            <Route path="/docuplate" element={<Docuplate />} />
+            <Route path="/docforge" element={<Navigate to="/docuplate" replace />} />
           </Routes>
         )}
       </main>

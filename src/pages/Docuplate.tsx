@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { docforgeCaseStudy, projects, type CaseStudyItem } from "../content";
+import { docuplateCaseStudy, projects, type CaseStudyItem } from "../content";
 import { asset } from "../lib/paths";
 
-const flagship = projects.find((p) => p.slug === "docforge")!;
+const flagship = projects.find((p) => p.slug === "docuplate")!;
 
-export default function DocForge() {
+export default function Docuplate() {
   return (
     <div className="min-h-screen pt-24 pb-32 px-6 md:px-10 max-w-7xl mx-auto">
-      {/* Back link */}
       <Link
         to="/"
         className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors mb-16 inline-block link-underline"
@@ -15,7 +14,6 @@ export default function DocForge() {
         ← Back to portfolio
       </Link>
 
-      {/* Header */}
       <header className="mb-16">
         <div className="flex items-baseline gap-4 mb-4">
           <span className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)]">
@@ -30,15 +28,14 @@ export default function DocForge() {
           className="font-serif font-black leading-none tracking-tight mb-6"
           style={{ fontSize: "clamp(3rem, 10vw, 7rem)" }}
         >
-          DocForge{" "}
-          <span style={{ color: "var(--color-accent)" }}>AI</span>
+          Docu<span style={{ color: "var(--color-accent)" }}>plate</span>
         </h1>
 
         <p
           className="font-serif font-light italic max-w-2xl"
           style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)" }}
         >
-          {docforgeCaseStudy.tagline}
+          {docuplateCaseStudy.tagline}
         </p>
 
         <div
@@ -46,9 +43,8 @@ export default function DocForge() {
           style={{ height: "1px", backgroundColor: "var(--color-rule)" }}
         />
 
-        {/* Links */}
         <div className="flex items-center gap-6 mt-6">
-          {docforgeCaseStudy.links.map((link) => (
+          {docuplateCaseStudy.links.map((link) => (
             <a
               key={link.url}
               href={link.url}
@@ -62,30 +58,25 @@ export default function DocForge() {
         </div>
       </header>
 
-      {/* Hero image */}
       <div
-        className="w-full mb-20 overflow-hidden flex items-center justify-center p-6 md:p-10"
-        style={{
-          border: "1px solid var(--color-rule)",
-          backgroundColor: "var(--color-paper)",
-        }}
+        className="w-full mb-20 overflow-hidden flex items-center justify-center p-6 md:p-10 rounded-sm"
+        style={{ border: "1px solid var(--color-rule)" }}
       >
         <img
-          src={asset("/images/docforge.png")}
-          alt="DocForge AI — logo"
-          className="max-h-[160px] max-w-[160px] md:max-h-[200px] md:max-w-[200px] object-contain"
+          src={asset("/images/docuplate.png")}
+          alt="Docuplate — logo"
+          className="max-h-[140px] max-w-[140px] md:max-h-[168px] md:max-w-[168px] object-contain rounded-xl"
         />
       </div>
 
-      {/* Overview */}
       <Section label="Overview">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
             <p className="text-base leading-relaxed mb-5">
-              {docforgeCaseStudy.overview}
+              {docuplateCaseStudy.overview}
             </p>
             <p className="text-base leading-relaxed text-[var(--color-ink-muted)]">
-              {docforgeCaseStudy.problem}
+              {docuplateCaseStudy.problem}
             </p>
           </div>
           <aside className="md:col-span-4 md:col-start-9">
@@ -105,12 +96,12 @@ export default function DocForge() {
               <p className="text-sm mb-6">
                 Live in production —{" "}
                 <a
-                  href="https://docforge-ai.pages.dev"
+                  href="https://www.docuplate.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-accent"
                 >
-                  docforge-ai.pages.dev
+                  docuplate.io
                 </a>
               </p>
               <p className="font-mono text-xs uppercase tracking-widest text-[var(--color-ink-muted)] mb-2">
@@ -122,17 +113,16 @@ export default function DocForge() {
         </div>
       </Section>
 
-      {/* Metrics */}
       <Section label="At a Glance">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-0">
-          {docforgeCaseStudy.metrics.map((m, i) => (
+          {docuplateCaseStudy.metrics.map((m, i) => (
             <div
               key={m.label}
               className="py-6 pr-6 border-b md:border-b-0"
               style={{
                 borderColor: "var(--color-rule)",
                 borderRight:
-                  i < docforgeCaseStudy.metrics.length - 1
+                  i < docuplateCaseStudy.metrics.length - 1
                     ? "1px solid var(--color-rule)"
                     : "none",
               }}
@@ -148,12 +138,10 @@ export default function DocForge() {
         </div>
       </Section>
 
-      {/* Highlights */}
       <Section label="Engineering Highlights">
-        <ItemGrid items={docforgeCaseStudy.highlights} columns={2} />
+        <ItemGrid items={docuplateCaseStudy.highlights} columns={2} />
       </Section>
 
-      {/* Architecture diagram (text-based) */}
       <Section label="Architecture">
         <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-6 max-w-3xl">
           Split-cloud by design: the SPA and API proxy share a Cloudflare Pages
@@ -194,43 +182,38 @@ export default function DocForge() {
         </div>
       </Section>
 
-      {/* Challenges */}
       <Section label="Challenges">
         <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
           The hardest problems weren't in the UI — they were in production
           PDF rendering, cross-origin auth, schema drift, and turning messy
           real-world PDFs into editable templates.
         </p>
-        <ItemGrid items={docforgeCaseStudy.challenges} columns={1} />
+        <ItemGrid items={docuplateCaseStudy.challenges} columns={1} />
       </Section>
 
-      {/* Trade-offs */}
       <Section label="Trade-offs">
         <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
           Deliberate decisions made to ship a real SaaS on a solo budget — with
           documented escape hatches if usage grows.
         </p>
-        <ItemGrid items={docforgeCaseStudy.tradeOffs} columns={2} />
+        <ItemGrid items={docuplateCaseStudy.tradeOffs} columns={2} />
       </Section>
 
-      {/* Shortcomings */}
       <Section label="Shortcomings & Limitations">
         <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
           Honest gaps — things I'd tackle next with more time or if usage
           demands it.
         </p>
-        <ItemGrid items={docforgeCaseStudy.shortcomings} columns={1} accent="muted" />
+        <ItemGrid items={docuplateCaseStudy.shortcomings} columns={1} accent="muted" />
       </Section>
 
-      {/* Learnings */}
       <Section label="What I Learned">
-        <ItemGrid items={docforgeCaseStudy.learnings} columns={1} accent="ink" />
+        <ItemGrid items={docuplateCaseStudy.learnings} columns={1} accent="ink" />
       </Section>
 
-      {/* Stack table */}
       <Section label="Full Stack">
         <div className="flex flex-col">
-          {docforgeCaseStudy.stack.map((row) => (
+          {docuplateCaseStudy.stack.map((row) => (
             <div
               key={row.category}
               className="grid grid-cols-1 md:grid-cols-12 gap-4 py-5 border-b"
@@ -249,12 +232,11 @@ export default function DocForge() {
         </div>
       </Section>
 
-      {/* Footer CTAs */}
       <div
         className="mt-20 pt-10 border-t flex flex-col md:flex-row items-start md:items-center gap-6"
         style={{ borderColor: "var(--color-rule)" }}
       >
-        {docforgeCaseStudy.links.map((link) => (
+        {docuplateCaseStudy.links.map((link) => (
           <a
             key={link.url}
             href={link.url}

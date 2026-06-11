@@ -115,11 +115,11 @@ _MERN (MongoDB, Express, React, Node.js), Axios, JavaScript, HTML, CSS_
 
 ## Projects
 
-### DocForge AI — PDF Automation SaaS  _(solo, production)_
+### Docuplate — PDF Automation SaaS  _(solo, production)_
 
 \`TypeScript, React, Vite, Node.js, Express, PostgreSQL, Stripe, Cloudflare Pages, Render, PostHog\`
 
-[Live: docforge-ai.pages.dev](https://docforge-ai.pages.dev)  ·  [GitHub](https://github.com/Murtaza-Aziz/docforge-ai)
+[Live: docuplate.io](https://www.docuplate.io/)  ·  [GitHub](https://github.com/Murtaza-Aziz/docuplate)
 
 Built and shipped a real SaaS product: a visual PDF template builder with JSON data binding and an
 API for programmatic, on-demand PDF generation.

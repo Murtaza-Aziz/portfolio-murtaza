@@ -29,19 +29,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "docforge",
-    title: "DocForge AI — PDF Automation SaaS",
-    year: "2025–2026",
+    slug: "docuplate",
+    title: "Docuplate — PDF Automation SaaS",
+    year: "May 2026 — In Progress",
     stack:
       "TypeScript, React, Vite, Node.js, Express, PostgreSQL, Stripe, Cloudflare Pages, Render, PostHog",
     role: "Solo, production",
     description:
       "Built and shipped a real SaaS product: a visual PDF template builder with JSON data binding and an API for programmatic, on-demand PDF generation. Chose a decoupled Cloudflare Pages + Node/Express (Render) + PostgreSQL architecture for independent scaling and clean separation between editor UI and generation engine. Solved reliable template-to-PDF rendering with dynamic layouts and font/asset edge cases, isolating heavy jobs so generation never blocks API responses. Added AI-driven template audits, API-key auth, scoped access, and input validation to safely expose generation as a public API. Shipped on managed PaaS to validate demand fast with a clear path to containerised infra; integrated PostHog to track funnel drop-off and feature usage to prioritise the roadmap.",
     links: [
-      { label: "Live site", url: "https://docforge-ai.pages.dev" },
-      { label: "GitHub", url: "https://github.com/Murtaza-Aziz/docforge-ai" },
+      { label: "Live site", url: "https://www.docuplate.io/" },
+      { label: "GitHub", url: "https://github.com/Murtaza-Aziz/docuplate" },
     ],
-    image: "/images/docforge.png",
+    image: "/images/docuplate.png",
     flagship: true,
     hasCaseStudy: true,
   },
@@ -143,17 +143,17 @@ export const education: EducationItem[] = [
   },
 ];
 
-// DocForge case study content
+// Docuplate case study content
 export type CaseStudyItem = {
   label: string;
   detail: string;
 };
 
-export const docforgeCaseStudy = {
+export const docuplateCaseStudy = {
   tagline:
     "A production SaaS for businesses that need professional PDFs — without hiring a designer.",
-  overview: `DocForge AI is a solo-built, production SaaS for designing and automating business PDFs — invoices, quotes, delivery notes, certificates, and custom documents. Users compose layouts in a visual block editor, bind fields to JSON, generate real PDFs server-side, and automate delivery via webhooks, public forms, or a REST API. All three paths share one hardened Puppeteer render pipeline.`,
-  problem: `Most PDF tools force a painful trade-off: expensive design software, fragile HTML-to-PDF templates, or opaque low-code platforms with weak developer integration. DocForge targets ops teams and developers who need design-once → bind JSON → preview → generate → automate — with security, billing, and testability built in from the start.`,
+  overview: `Docuplate is a solo-built, production SaaS for designing and automating business PDFs — invoices, quotes, delivery notes, certificates, and custom documents. Users compose layouts in a visual block editor, bind fields to JSON, generate real PDFs server-side, and automate delivery via webhooks, public forms, or a REST API. All three paths share one hardened Puppeteer render pipeline.`,
+  problem: `Most PDF tools force a painful trade-off: expensive design software, fragile HTML-to-PDF templates, or opaque low-code platforms with weak developer integration. Docuplate targets ops teams and developers who need design-once → bind JSON → preview → generate → automate — with security, billing, and testability built in from the start.`,
   metrics: [
     { label: "Automated tests", value: "~285 (241 server + 44 client)" },
     { label: "SQL migrations", value: "13 (Neon Postgres)" },
@@ -322,7 +322,7 @@ export const docforgeCaseStudy = {
     { category: "Deploy", items: "Cloudflare Pages (edge SPA + API proxy) + Render (Node worker + 1 GB persistent disk) + optional Cloudflare R2" },
   ],
   links: [
-    { label: "Live site", url: "https://docforge-ai.pages.dev" },
-    { label: "GitHub", url: "https://github.com/Murtaza-Aziz/docforge-ai" },
+    { label: "Live site", url: "https://www.docuplate.io/" },
+    { label: "GitHub", url: "https://github.com/Murtaza-Aziz/docuplate" },
   ],
 };
