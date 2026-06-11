@@ -16,24 +16,24 @@ const CV_MD = `# Murtaza Aziz
 
 ## Summary
 
-Full stack engineer specialising in the MERN stack and TypeScript, with end-to-end experience
+Full-stack engineer specialising in the MERN stack and TypeScript, with end-to-end experience
 designing APIs, modelling data, and shipping production systems. Comfortable owning features
-from requirement to deployment — making architecture and trade-off decisions, optimising
+from requirement to deployment, making architecture and trade-off decisions, optimising
 database and runtime performance, and collaborating directly with product owners and clients.
-Pragmatic about tooling: I use rapid-prototyping and AI-assisted workflows to validate ideas
-fast, then build them properly on scalable, well-tested foundations.
+Pragmatic about tooling: I use rapid prototyping and AI-assisted workflows to validate ideas
+quickly, then build them properly on scalable, well-tested foundations.
 
 ---
 
 ## Technical Skills
 
 - **Languages:** TypeScript, JavaScript, Python, Java, SQL, HTML, CSS
-- **Backend:** Node.js, Express, Adonis.js, REST API design, async/queue-based processing, Stripe
+- **Backend:** Node.js, Express, Adonis.js, REST API design, async/queue-based processing, authentication, Stripe
 - **Frontend:** React, Redux, Tailwind CSS, Vite, Axios
-- **Databases:** MongoDB, PostgreSQL — schema design, query optimisation, indexing, caching
-- **Cloud & Infra:** AWS (S3, Lambda), Google Cloud, Cloudflare Pages, Render, GitHub Actions
-- **Testing:** Jest, unit/integration testing, SonarLint, PMD analysis, code review
-- **AI-Assisted Dev:** GPT/Claude for acceleration, internal automation scripts, debugging
+- **Databases:** MongoDB, PostgreSQL, schema design, query optimisation, indexing, caching
+- **Cloud & Infra:** AWS (S3, Lambda), Google Cloud, Cloudflare Pages, Render, CI/CD with GitHub Actions
+- **Testing & Quality:** Jest, unit/integration testing, SonarLint, PMD analysis, code review, Playwright
+- **AI-Assisted Dev:** GPT/Claude/Cursor for development acceleration, internal automation scripts, data processing, debugging
 - **Collaboration:** Git/GitHub, Jira, Figma, Slack, Notion, Trello
 
 ---
@@ -42,61 +42,74 @@ fast, then build them properly on scalable, well-tested foundations.
 
 ### Software Engineer (Mid-Level) @ Preplocal
 
-\`Nov 2025 – Present\`  ·  Full-time  ·  Sydney, NSW
+\`Nov 2025 – Present\`
 
 _TypeScript, JavaScript, Node.js, REST APIs, Google Cloud, Bubble.io, Make.com_
 
 - Own delivery and logistics features end-to-end, translating ambiguous requirements from
   founders and operations into technical designs, scoped milestones, and shipped solutions.
-- Redesigned delivery route-optimisation algorithm using nearest-neighbour heuristic with
-  batched constraints — cutting route computation time by ~60% and throughput by 40%.
-- Drove migration from tightly-coupled workflows to a modular, service-oriented structure
-  with queue-based async jobs, removing blocking ops and improving responsiveness under load.
+- Redesigned the delivery route-optimisation algorithm using a nearest-neighbour heuristic with
+  batched constraints, cutting route computation time by ~60% and improving delivery throughput by 40%.
+- Drove the move from tightly-coupled workflows toward a modular, service-oriented structure
+  with queue-based async jobs, removing blocking operations and improving system responsiveness under load.
 - Optimised core data queries through restructured schemas and targeted indexing, reducing
-  key read latency without added infrastructure cost.
-- Built internal AI-assisted tools (GPT/Claude scripts) for data clean-up and automation.
+  key read latency and supporting order-volume growth without added infrastructure cost.
 
 ### Junior Software Engineer @ Preplocal
 
-\`Nov 2024 – Nov 2025\`  ·  Full-time  ·  Sydney, NSW
+\`Nov 2024 – Nov 2025\`
 
 _JavaScript, Bubble.io, Make.com, APITemplate, Google Cloud_
 
-- Implemented logistics and workflow-automation features against clear specs.
-- Architected flexible data structures to introduce a "brands" concept for multi-brand accounts.
-- Used Bubble for rapid prototyping and A/B testing before translating features to code.
-- Built automation pipelines (Make.com + APITemplate) replacing manual document steps.
+- Implemented logistics and workflow-automation features against clear specs, contributing to
+  the platform's day-to-day delivery operations.
+- Architected flexible data structures to introduce a "brands" concept, letting companies manage
+  multiple brands under one account without breaking existing records.
+- Built automation pipelines (Make.com + APITemplate) that replaced manual document and data steps,
+  reducing turnaround time on routine operational tasks.
 
-### Full Stack Software Engineer @ Meyd.it
+### Full Stack Software Engineer (Internship) @ Meyd.it
 
-\`May 2024 – Oct 2024\`  ·  Contract  ·  Sydney, NSW
+\`May 2024 – Oct 2024\`
 
-_TypeScript, JavaScript, React, Node.js, Adonis.js, PostgreSQL, Stripe, AWS_
+_TypeScript, JavaScript, React, Node.js, Adonis.js, PostgreSQL, Stripe, AWS (EC2, S3, Lambda)_
 
-- Designed and integrated escrow-based payment infrastructure with Stripe.
-- Built critical backend services and reworked checkout flow for correctness and performance.
-- Modelled relational data in PostgreSQL and tuned queries on transaction-heavy paths.
-- Reviewed pull requests and enforced quality standards in an agile team.
+- Designed and integrated escrow-based payment infrastructure with Stripe, handling payments,
+  payouts, and compliance to securely hold funds between transacting parties.
+- Built critical backend services deployed on AWS (EC2, S3, Lambda) and reworked the checkout
+  flow for correctness and performance, reducing payment edge-case errors and improving checkout reliability.
+- Modelled relational data in PostgreSQL and tuned queries on transaction-heavy paths, keeping
+  response times stable as data grew.
+- Reviewed pull requests and enforced quality standards in an agile team, improving consistency
+  and reducing regressions across the codebase.
 
 ### Full Stack Software Engineer (Internship) @ EZiD
 
-\`Oct 2022 – Feb 2023\`  ·  Internship
+\`Oct 2022 – Feb 2023\`
 
 _MERN (MongoDB, Express, React, Node.js), Stripe, JavaScript, HTML, CSS_
 
-- Built a custom subscription payment model with the Stripe API for EZiD's developer portal.
-- Developed the developer-portal frontend in React working closely with senior engineers.
-- Handled webhooks, edge cases, and failure states for third-party billing integration.
+- Built a custom subscription payment model with the Stripe API for EZiD's developer portal,
+  ensuring secure, recurring transactions.
+- Developed the developer-portal frontend in React with a focus on usability, working closely
+  with senior engineers to align on UX and API contracts.
+- Tackled early challenges integrating third-party billing with the existing backend, handling
+  webhooks, edge cases, and failure states reliably.
+- Collaborated cross-functionally to keep delivery aligned with project objectives within a
+  fixed internship timeline.
 
-### Project Lead & Software Engineer @ Brainybucks
+### Project Lead & Software Engineer (Internship/Capstone project) @ Brainybucks
 
 \`Feb 2023 – Jul 2023\`
 
 _MERN (MongoDB, Express, React, Node.js), Axios, JavaScript, HTML, CSS_
 
-- Led a 4-person team to deliver a responsive website to launch.
-- Architected frontend and API layer; made key technical decisions for a junior team.
-- Achieved a 95 SEO score through semantic markup, performance, and metadata work.
+- Led a 4-person team to deliver a responsive website to launch, owning scope, task breakdown,
+  and delivery against stakeholder goals.
+- Architected the frontend and API layer and made key technical decisions to keep the build
+  maintainable for a junior team.
+- Achieved a 95 SEO score through semantic markup, performance, and metadata work, expanding
+  online visibility and reach.
 
 ---
 
@@ -104,29 +117,30 @@ _MERN (MongoDB, Express, React, Node.js), Axios, JavaScript, HTML, CSS_
 
 ### DocForge AI — PDF Automation SaaS  _(solo, production)_
 
-\`TypeScript · React · Node.js · PostgreSQL · Stripe · Cloudflare · PostHog\`
+\`TypeScript, React, Vite, Node.js, Express, PostgreSQL, Stripe, Cloudflare Pages, Render, PostHog\`
 
 [Live: docforge-ai.pages.dev](https://docforge-ai.pages.dev)  ·  [GitHub](https://github.com/Murtaza-Aziz/docforge-ai)
 
-Built and shipped a real SaaS: visual PDF template builder with JSON data binding and an
-API for programmatic on-demand PDF generation.
+Built and shipped a real SaaS product: a visual PDF template builder with JSON data binding and an
+API for programmatic, on-demand PDF generation.
 
-- **Architecture:** Decoupled Cloudflare Pages (SPA) + Node/Express API (Render) + PostgreSQL
-  for independent scaling, low hosting cost, and clean separation of concerns.
-- **PDF engine:** Solved reliable template-to-PDF rendering with dynamic layouts, font/asset
-  edge cases, and isolated generation so heavy jobs never block API responses.
-- **AI & security:** AI-driven template audits, API-key auth, scoped access, input validation
-  for safe public API exposure plus secure Stripe subscription handling.
-- **Trade-offs:** Shipped on managed PaaS to validate demand fast; clear path to containers.
-- **Analytics:** PostHog to track funnel drop-off and feature usage for roadmap decisions.
+- **Architecture:** Chose a decoupled frontend (Cloudflare Pages) + Node/Express API (Render) + PostgreSQL
+  for independent scaling, low hosting cost, and clean separation between editor UI and generation engine.
+- **PDF engine:** Solved reliable template-to-PDF rendering by handling dynamic layouts and font/asset
+  edge cases, isolating heavy jobs so generation never blocks API responses.
+- **AI & security:** Added AI-driven template audits that flag layout/data-binding issues before generation
+  (fewer failed renders), with API-key auth, scoped access, and input validation to safely expose
+  generation as a public API.
+- **Trade-offs & analytics:** Shipped on managed PaaS to validate demand fast with a clear path to
+  containerised infra; integrated PostHog to track funnel drop-off and feature usage to prioritise the roadmap.
 
 ---
 
 ## Education
 
-### Bachelor of Science in Information Technology
+### B.Sc. Information Technology
 
-**Macquarie University**  ·  Graduated July 2023
+**Macquarie University**  ·  Graduated Jul 2023
 
 _Major: Web and Mobile App Development_`;
 

@@ -2,7 +2,7 @@
 
 export const meta = {
   name: "Murtaza Aziz",
-  role: "Software engineer / full-stack web developer",
+  role: "Full Stack Software Engineer — Node.js · React · TypeScript · System Design",
   location: "Sydney, NSW",
   availability: "Open to opportunities",
   email: "murtaza.aziz101@gmail.com",
@@ -30,13 +30,13 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "docforge",
-    title: "DocForge AI",
+    title: "DocForge AI — PDF Automation SaaS",
     year: "2025–2026",
     stack:
-      "React, TypeScript, Express, Neon Postgres, Puppeteer, Stripe, OpenAI, Resend, Cloudflare Pages + Render",
-    role: "Solo founder / full-stack engineer",
+      "TypeScript, React, Vite, Node.js, Express, PostgreSQL, Stripe, Cloudflare Pages, Render, PostHog",
+    role: "Solo, production",
     description:
-      "Production SaaS for designing and automating business PDFs — invoices, quotes, delivery notes. Visual block editor with live preview, Stripe subscription billing, no-code webhook automation, and a developer REST API.",
+      "Built and shipped a real SaaS product: a visual PDF template builder with JSON data binding and an API for programmatic, on-demand PDF generation. Chose a decoupled Cloudflare Pages + Node/Express (Render) + PostgreSQL architecture for independent scaling and clean separation between editor UI and generation engine. Solved reliable template-to-PDF rendering with dynamic layouts and font/asset edge cases, isolating heavy jobs so generation never blocks API responses. Added AI-driven template audits, API-key auth, scoped access, and input validation to safely expose generation as a public API. Shipped on managed PaaS to validate demand fast with a clear path to containerised infra; integrated PostHog to track funnel drop-off and feature usage to prioritise the roadmap.",
     links: [
       { label: "Live site", url: "https://docforge-ai.pages.dev" },
       { label: "GitHub", url: "https://github.com/Murtaza-Aziz/docforge-ai" },
@@ -44,44 +44,6 @@ export const projects: Project[] = [
     image: "/images/docforge.png",
     flagship: true,
     hasCaseStudy: true,
-  },
-  {
-    slug: "brainybucks",
-    title: "BrainyBucks",
-    year: "2023",
-    stack: "React, CSS, Netlify",
-    role: "Project Lead & Software Engineer",
-    description:
-      "Financial education website for a startup. Led a team of four from brief to launch, achieving an SEO score of 95 and a fully responsive build.",
-    links: [{ label: "Live site", url: "https://brainybucks.netlify.app/" }],
-    image: "/images/brainy-bucks-logo-work.jpg",
-  },
-  {
-    slug: "ezid",
-    title: "EZiD — Payment Integration",
-    year: "2023",
-    stack: "React, Node.js, Stripe API",
-    role: "Full Stack Software Engineer",
-    description:
-      "Integrated a custom subscription payment model using Stripe into EZiD's developer portal, enabling secure recurring transactions and a streamlined onboarding flow.",
-    links: [{ label: "ezid.io", url: "https://www.ezid.io/" }],
-    image: "/images/ezid-work.jpg",
-  },
-  {
-    slug: "recipe-app",
-    title: "Recipe Recommendation App",
-    year: "2023",
-    stack: "React, JavaScript",
-    role: "Developer",
-    description:
-      "React app that recommends recipes based on available ingredients, demonstrating hooks, component composition, and API data mapping.",
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/Murtaza-Aziz/recipe-recommendation-app",
-      },
-    ],
-    image: "/images/recipe_app.png",
   },
 ];
 
@@ -97,55 +59,73 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     company: "Preplocal",
-    role: "Junior Software Engineer",
-    period: "Nov 2024 — Present",
+    role: "Software Engineer (Mid-Level)",
+    period: "Nov 2025 — Present",
     employment: "Full-time",
     techStack:
-      "JavaScript, Bubble.io, Make.com, APITemplate, Google Cloud Services",
+      "TypeScript, JavaScript, Node.js, REST APIs, Google Cloud, Bubble.io, Make.com",
     bullets: [
-      "Designed and optimized delivery route algorithms, improving logistics efficiency by 40%.",
-      "Architected complex data structures for companies to add a notion of brands.",
-      "Implemented workflow automation and enhanced system responsiveness.",
+      "Own delivery and logistics features end-to-end, translating ambiguous requirements from founders and operations into technical designs, scoped milestones, and shipped solutions.",
+      "Redesigned the delivery route-optimisation algorithm using a nearest-neighbour heuristic with batched constraints, cutting route computation time by ~60% and improving delivery throughput by 40%.",
+      "Drove the move from tightly-coupled workflows toward a modular, service-oriented structure with queue-based async jobs, removing blocking operations and improving system responsiveness under load.",
+      "Optimised core data queries through restructured schemas and targeted indexing, reducing key read latency and supporting order-volume growth without added infrastructure cost.",
+    ],
+  },
+  {
+    company: "Preplocal",
+    role: "Junior Software Engineer",
+    period: "Nov 2024 — Nov 2025",
+    employment: "Full-time",
+    techStack: "JavaScript, Bubble.io, Make.com, APITemplate, Google Cloud",
+    bullets: [
+      "Implemented logistics and workflow-automation features against clear specs, contributing to the platform's day-to-day delivery operations.",
+      "Architected flexible data structures to introduce a \"brands\" concept, letting companies manage multiple brands under one account without breaking existing records.",
+      "Built automation pipelines (Make.com + APITemplate) that replaced manual document and data steps, reducing turnaround time on routine operational tasks.",
     ],
   },
   {
     company: "Meyd.it",
-    role: "Full Stack Software Engineer",
+    role: "Full Stack Software Engineer (Internship)",
     period: "May 2024 — Oct 2024",
+    employment: "Internship",
     techStack:
-      "TypeScript, JavaScript, React, Node.js, Adonis.js, PostgreSQL, Stripe, AWS",
+      "TypeScript, JavaScript, React, Node.js, Adonis.js, PostgreSQL, Stripe, AWS (EC2, S3, Lambda)",
     bullets: [
-      "Integrated an escrow account infrastructure and managed Stripe for payments, payouts, and compliance.",
-      "Developed critical backend services and optimized checkout processes for accuracy and efficiency.",
-      "Conducted code reviews and approved pull requests in GitHub in an agile environment.",
+      "Designed and integrated escrow-based payment infrastructure with Stripe, handling payments, payouts, and compliance to securely hold funds between transacting parties.",
+      "Built critical backend services deployed on AWS (EC2, S3, Lambda) and reworked the checkout flow for correctness and performance, reducing payment edge-case errors and improving checkout reliability.",
+      "Modelled relational data in PostgreSQL and tuned queries on transaction-heavy paths, keeping response times stable as data grew.",
+      "Reviewed pull requests and enforced quality standards in an agile team, improving consistency and reducing regressions across the codebase.",
     ],
   },
   {
     company: "EZiD",
-    role: "Full Stack Software Engineer",
-    period: "Jan 2023 — Feb 2023",
-    techStack: "MERN, Stripe, JavaScript, HTML, CSS",
+    role: "Full Stack Software Engineer (Internship)",
+    period: "Oct 2022 — Feb 2023",
+    employment: "Internship",
+    techStack: "MERN (MongoDB, Express, React, Node.js), Stripe, JavaScript, HTML, CSS",
     bullets: [
-      "Integrated custom subscription payment model using Stripe API, ensuring secure transactions.",
-      "Designed an intuitive front end for EZiD's developer portal, prioritizing user experience.",
-      "Facilitated cross-functional collaboration, ensuring alignment with project objectives.",
+      "Built a custom subscription payment model with the Stripe API for EZiD's developer portal, ensuring secure, recurring transactions.",
+      "Developed the developer-portal frontend in React with a focus on usability, working closely with senior engineers to align on UX and API contracts.",
+      "Tackled early challenges integrating third-party billing with the existing backend, handling webhooks, edge cases, and failure states reliably.",
+      "Collaborated cross-functionally to keep delivery aligned with project objectives within a fixed internship timeline.",
     ],
   },
   {
     company: "Brainybucks",
-    role: "Project Lead & Software Engineer",
+    role: "Project Lead & Software Engineer (Internship/Capstone project)",
     period: "Feb 2023 — Jul 2023",
-    techStack: "MERN, Axios, JavaScript, HTML, CSS",
+    employment: "Internship / Capstone",
+    techStack: "MERN (MongoDB, Express, React, Node.js), Axios, JavaScript, HTML, CSS",
     bullets: [
-      "Led the development of a team of 4 students to a successful launch of a responsive website.",
-      "Achieved an outstanding SEO score of 95, expanding online visibility and market reach.",
-      "Managed project scope and delivery, maintaining alignment with stakeholder goals.",
+      "Led a 4-person team to deliver a responsive website to launch, owning scope, task breakdown, and delivery against stakeholder goals.",
+      "Architected the frontend and API layer and made key technical decisions to keep the build maintainable for a junior team.",
+      "Achieved a 95 SEO score through semantic markup, performance, and metadata work, expanding online visibility and reach.",
     ],
   },
 ];
 
 export const skills =
-  "TypeScript, JavaScript, React, Tailwind CSS, Node.js, Express, PostgreSQL, MongoDB, Stripe, Python, Java, AWS, Google Cloud, Jest, Git, GitHub Actions, Figma, Jira";
+  "TypeScript, JavaScript, Python, Java, SQL, HTML, CSS, React, Redux, Tailwind CSS, Node.js, Express, Adonis.js, MongoDB, PostgreSQL, Stripe, AWS, Google Cloud, Cloudflare Pages, Render, Jest, Playwright, Git, GitHub Actions, GPT/Claude/Cursor, Figma, Jira";
 
 export type EducationItem = {
   institution: string;
