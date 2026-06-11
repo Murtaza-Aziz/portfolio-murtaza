@@ -64,14 +64,16 @@ export default function DocForge() {
 
       {/* Hero image */}
       <div
-        className="w-full mb-20 overflow-hidden"
-        style={{ border: "1px solid var(--color-rule)" }}
+        className="w-full mb-20 overflow-hidden flex items-center justify-center p-6 md:p-10"
+        style={{
+          border: "1px solid var(--color-rule)",
+          backgroundColor: "var(--color-paper)",
+        }}
       >
         <img
           src={asset("/images/docforge.png")}
-          alt="DocForge AI — PDF builder interface"
-          className="w-full object-cover"
-          style={{ aspectRatio: "16/9", objectPosition: "top" }}
+          alt="DocForge AI — logo"
+          className="max-h-[160px] max-w-[160px] md:max-h-[200px] md:max-w-[200px] object-contain"
         />
       </div>
 

@@ -92,14 +92,16 @@ function ProjectRow({
           {project.image && (
             <div className="md:col-span-5">
               <div
-                className="overflow-hidden"
-                style={{ border: "1px solid var(--color-rule)" }}
+                className="overflow-hidden flex items-center justify-center p-6 md:p-8"
+                style={{
+                  border: "1px solid var(--color-rule)",
+                  backgroundColor: "var(--color-paper)",
+                }}
               >
                 <img
                   src={asset(project.image)}
                   alt={project.title}
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ aspectRatio: "16/10" }}
+                  className="max-h-[160px] max-w-[160px] md:max-h-[180px] md:max-w-[180px] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>
