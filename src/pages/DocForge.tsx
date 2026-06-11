@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { docforgeCaseStudy, projects } from "../content";
+import { docforgeCaseStudy, projects, type CaseStudyItem } from "../content";
 import { asset } from "../lib/paths";
 
 const flagship = projects.find((p) => p.slug === "docforge")!;
@@ -120,33 +120,51 @@ export default function DocForge() {
         </div>
       </Section>
 
-      {/* Highlights */}
-      <Section label="Engineering Highlights">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {docforgeCaseStudy.highlights.map((h, i) => (
+      {/* Metrics */}
+      <Section label="At a Glance">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-0">
+          {docforgeCaseStudy.metrics.map((m, i) => (
             <div
-              key={h.label}
-              className="py-8 pr-0 md:pr-12 border-b"
+              key={m.label}
+              className="py-6 pr-6 border-b md:border-b-0"
               style={{
                 borderColor: "var(--color-rule)",
                 borderRight:
-                  i % 2 === 0 ? "1px solid var(--color-rule)" : "none",
+                  i < docforgeCaseStudy.metrics.length - 1
+                    ? "1px solid var(--color-rule)"
+                    : "none",
               }}
             >
-              <p className="font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] mb-3">
-                {h.label}
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-ink-muted)] mb-2">
+                {m.label}
               </p>
-              <p className="text-sm leading-relaxed">{h.detail}</p>
+              <p className="font-serif font-bold text-sm leading-snug">
+                {m.value}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
+      {/* Highlights */}
+      <Section label="Engineering Highlights">
+        <ItemGrid items={docforgeCaseStudy.highlights} columns={2} />
+      </Section>
+
       {/* Architecture diagram (text-based) */}
       <Section label="Architecture">
+        <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-6 max-w-3xl">
+          Split-cloud by design: the SPA and API proxy share a Cloudflare Pages
+          origin so HttpOnly session cookies work without localStorage JWTs. The
+          API runs on Render with Puppeteer, Neon Postgres, and optional R2
+          storage.
+        </p>
         <div
           className="p-8 font-mono text-xs leading-loose"
-          style={{ border: "1px solid var(--color-rule)", color: "var(--color-ink-muted)" }}
+          style={{
+            border: "1px solid var(--color-rule)",
+            color: "var(--color-ink-muted)",
+          }}
         >
           <pre className="overflow-x-auto whitespace-pre">{`
   Browser (React SPA)
@@ -160,18 +178,51 @@ export default function DocForge() {
             Render.com
             ├── Express API server (Node 20)
             │   ├── Auth (JWT + HttpOnly cookies)
-            │   ├── Template CRUD
+            │   ├── Template CRUD + PDF import
             │   ├── Webhook + Form automation
-            │   ├── Stripe billing
+            │   ├── Stripe billing + entitlements
             │   └── PDF generation (Puppeteer worker)
             │
             ├── Neon Postgres (serverless)
-            │   └── 11 SQL migrations
+            │   └── 13 SQL migrations
             │
             └── Persistent disk / Cloudflare R2
                 └── Generated PDFs + uploads
           `.trim()}</pre>
         </div>
+      </Section>
+
+      {/* Challenges */}
+      <Section label="Challenges">
+        <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
+          The hardest problems weren't in the UI — they were in production
+          PDF rendering, cross-origin auth, schema drift, and turning messy
+          real-world PDFs into editable templates.
+        </p>
+        <ItemGrid items={docforgeCaseStudy.challenges} columns={1} />
+      </Section>
+
+      {/* Trade-offs */}
+      <Section label="Trade-offs">
+        <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
+          Deliberate decisions made to ship a real SaaS on a solo budget — with
+          documented escape hatches if usage grows.
+        </p>
+        <ItemGrid items={docforgeCaseStudy.tradeOffs} columns={2} />
+      </Section>
+
+      {/* Shortcomings */}
+      <Section label="Shortcomings & Limitations">
+        <p className="text-sm leading-relaxed text-[var(--color-ink-muted)] mb-8 max-w-3xl">
+          Honest gaps — things I'd tackle next with more time or if usage
+          demands it.
+        </p>
+        <ItemGrid items={docforgeCaseStudy.shortcomings} columns={1} accent="muted" />
+      </Section>
+
+      {/* Learnings */}
+      <Section label="What I Learned">
+        <ItemGrid items={docforgeCaseStudy.learnings} columns={1} accent="ink" />
       </Section>
 
       {/* Stack table */}
@@ -241,5 +292,53 @@ function Section({
       </p>
       {children}
     </section>
+  );
+}
+
+function ItemGrid({
+  items,
+  columns = 2,
+  accent = "accent",
+}: {
+  items: CaseStudyItem[];
+  columns?: 1 | 2;
+  accent?: "accent" | "muted" | "ink";
+}) {
+  const labelColor =
+    accent === "accent"
+      ? "text-[var(--color-accent)]"
+      : accent === "muted"
+      ? "text-[var(--color-ink-muted)]"
+      : "text-[var(--color-ink)]";
+
+  return (
+    <div
+      className={
+        columns === 2
+          ? "grid grid-cols-1 md:grid-cols-2 gap-0"
+          : "flex flex-col gap-0"
+      }
+    >
+      {items.map((item, i) => (
+        <div
+          key={item.label}
+          className="py-8 pr-0 md:pr-12 border-b"
+          style={{
+            borderColor: "var(--color-rule)",
+            borderRight:
+              columns === 2 && i % 2 === 0
+                ? "1px solid var(--color-rule)"
+                : "none",
+          }}
+        >
+          <p
+            className={`font-mono text-xs uppercase tracking-widest mb-3 ${labelColor}`}
+          >
+            {item.label}
+          </p>
+          <p className="text-sm leading-relaxed">{item.detail}</p>
+        </div>
+      ))}
+    </div>
   );
 }
